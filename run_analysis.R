@@ -69,4 +69,4 @@ tidy_dat  <- dat_filt %>%
     group_by(subject, activity) %>%
     summarise_all(mean)
 
-write.csv(tidy_dat, file = "tidy_data.csv")
+write.table(tidy_dat, file = "tidy_data.txt", row.names = F)

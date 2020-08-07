@@ -1,4 +1,4 @@
-# Code Book for tidy_data.csv
+# Code Book for tidy_data.txt
 
 
 ## Variable names are based on the original raw data factor names, the below section is taken directly from the raw codebook
