@@ -60,7 +60,7 @@ dat_filt$activity <- act_labels$V2[map]
 
 write.csv(dat_filt, file = "tidy_data_1.csv")
 
-    ##  From the data in the previous step, make an independent tidy data
+    ##  5. From the data in the previous step, make an independent tidy data ----
     ##  set with the average of each variable for each activity and each subject
 
 ##  I'm not sure if I correctly understand the question, the way I am going to
