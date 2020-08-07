@@ -11,3 +11,5 @@ Code works by reading in the data from the [UCI HAR Dataset](http://archive.ics.
     + It changes the numeric "activity" into a descriptive characters using `activity_labels.txt`
     + It creates a new tidy dataset, `tidy_data.txt`, which is the average for each factor for each given activity of an individual.
 + *code_book.md*: A codebook for the variables used in `tidy_data.txt`
++ *output*: The folder of the analysis output
+    + *tidy_data.txt*: The result of the final step of the analysis
