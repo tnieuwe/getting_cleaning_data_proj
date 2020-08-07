@@ -38,5 +38,16 @@ These signals were used to estimate variables of the feature vector for each pat
 + *std()*: Refers to the standard deviation of the readings
 
 ## Differences from original codebook below
+Other added codes:
++ *subject*: The number that represents the subjects ID
+    + ranges from 1-30, should be considered a factor
++ *activity*: The activity the individual was performing which could be:
+    + LAYING
+    + SITTING
+    + STANDING
+    + WALKING
+    + WALKING_DOWNSTAIRS
+    + WALKING_UPSTAIRS
+
 
 The codebook is the same as above, but for each individual in each activity we took the average of their value, for example, tBodyAcc-std()-X is the average standard deviation time domain body acceleration signals for the X axis of the given sample individual and activity. Therefore any value is the average of that value for the individual and activity.
