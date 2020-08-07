@@ -1,4 +1,4 @@
-# Code Book for tidy_data_1.csv
+# Code Book for tidy_data.csv
 
 
 ## Variable names are based on the original raw data factor names, the below section is taken directly from the raw codebook
@@ -37,6 +37,6 @@ These signals were used to estimate variables of the feature vector for each pat
 + *mean()*: Refers to the mean value of the readings
 + *std()*: Refers to the standard deviation of the readings
 
-# Code Book for tidy_data_2.csv
+## Differences from original codebook below
 
-The codebook is exacty the same as above, but for each individual in each activity we took the average of their value, for example, tBodyAcc-std()-X is the average standard deviation time domain body acceleration signals for the X axis of the given sample individual and activity. 
+The codebook is the same as above, but for each individual in each activity we took the average of their value, for example, tBodyAcc-std()-X is the average standard deviation time domain body acceleration signals for the X axis of the given sample individual and activity. Therefore any value is the average of that value for the individual and activity.
