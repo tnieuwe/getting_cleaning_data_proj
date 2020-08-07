@@ -24,20 +24,26 @@ all_train <- cbind(subj_train, y_train, x_train)
 ##  Merge data
 merge_dat <- rbind(all_test, all_train)
 
+    
+    ##Step 4 occurs here, but moving this step earlier helps step 2    
+    
+##  Read in features.txt
+features <- read.table("UCI HAR Dataset/features.txt", row.names = 1)    
+    
 ##  Properly label data
 colnames(merge_dat) <- c(c("subject", "activity"), features$V2)
-##  Read in features.txt
-features <- read.table("UCI HAR Dataset/features.txt", row.names = 1)
 
-#colnames(merge_dat)[1:2] <- c("subject", "activity")
 
-    ## 2. Extract only measurments on the mean and standard deviation 
+
+    ## 2. Extract only measurements on the mean and standard deviation 
     ##  for each measurement.
 
+##  Use grepl to pick out mean (note note frequency), standard deviation (std), 
+##  the subject name I've given and activity name
 dat_filt <- merge_dat[,grepl("mean[(]|std|subject|activity",colnames(merge_dat))]
 
 
-    ## Use descriptive activity names to name the activities in the data set
+    ## 3. Use descriptive activity names to name the activities in the data set----
 
 ##  Read activity labels
 act_labels <- read.table(file = "UCI HAR Dataset/activity_labels.txt")
@@ -46,6 +52,24 @@ map <- match(dat_filt$activity, act_labels$V1)
 #Replace
 dat_filt$activity <- act_labels$V2[map]
 
-    ## Appropriately labels the data set with descriptive variable names. 
-#Use janitor clean names to clean up variable names
-dat_filt %>% clean_names()
+    ## 4. Appropriately labels the data set with descriptive variable names.---- 
+
+    ## Please see lines 28-34, this code was moved early for ease of grep usage
+
+# Saving tidy data 1
+
+write.csv(dat_filt, file = "tidy_data_1.csv")
+
+    ##  From the data in the previous step, make an independent tidy data
+    ##  set with the average of each variable for each activity and each subject
+
+##  I'm not sure if I correctly understand the question, the way I am going to
+##  answer it is by making mean for each variable by grouping by both subject
+##  and activity, my pardons if this is the wrong intprepetation. 
+
+
+tidy_2  <- dat_filt %>%
+    group_by(subject, activity) %>%
+    summarise_all(mean)
+
+write.csv(tidy_2, file = "tidy_data_2.csv")
