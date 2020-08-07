@@ -56,20 +56,17 @@ dat_filt$activity <- act_labels$V2[map]
 
     ## Please see lines 28-34, this code was moved early for ease of grep usage
 
-# Saving tidy data 1
-
-write.csv(dat_filt, file = "tidy_data_1.csv")
 
     ##  5. From the data in the previous step, make an independent tidy data ----
     ##  set with the average of each variable for each activity and each subject
 
 ##  I'm not sure if I correctly understand the question, the way I am going to
 ##  answer it is by making mean for each variable by grouping by both subject
-##  and activity, my pardons if this is the wrong intprepetation. 
+##  and activity, my pardons if this is the wrong interpretation. 
 
 
-tidy_2  <- dat_filt %>%
+tidy_dat  <- dat_filt %>%
     group_by(subject, activity) %>%
     summarise_all(mean)
 
-write.csv(tidy_2, file = "tidy_data_2.csv")
+write.csv(tidy_dat, file = "tidy_data.csv")
