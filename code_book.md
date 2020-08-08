@@ -15,6 +15,8 @@ Finally a Fast Fourier Transform (FFT) was applied to some of these signals prod
 These signals were used to estimate variables of the feature vector for each pattern:  
 '-XYZ' is used to denote 3-axial signals in the X, Y and Z directions.
 
+*note:* These are all normalized numerics with values between -1 and 1.
+
 + tBodyAcc-XYZ
 + tGravityAcc-XYZ
 + tBodyAccJerk-XYZ
@@ -50,4 +52,4 @@ Other added codes:
     + WALKING_UPSTAIRS
 
 
-The codebook is the same as above, but for each individual in each activity we took the average of their value, for example, tBodyAcc-std()-X is the average standard deviation time domain body acceleration signals for the X axis of the given sample individual and activity. Therefore any value is the average of that value for the individual and activity.
+The codebook for `tidy_data.txt` is the same as above, but for each individual in each activity we took the average of their value, for example, tBodyAcc-std()-X is the average standard deviation time domain body acceleration signals for the X axis of the given sample individual and activity. Therefore any value is the average of that value for the individual and activity.
